@@ -1,0 +1,33 @@
+[package]
+name = "hayaku"
+version = "0.1.0"
+edition = "2021"
+default-run = "hayaku"
+
+[profile.release]
+lto = "thin"
+debug = true
+incremental = true
+
+[dependencies]
+anyhow = { version = "1.0.81", optional = true }
+rand = { version = "0.8.5", optional = true }
+rand_distr = { version = "0.4.3", optional = true }
+rayon = { version = "1.9.0", optional = true }
+assert2 = "0.3.11"
+clap = "4.4.14"
+colored = "2.1.0"
+fxhash = "0.2.1"
+memmap2 = "0.9.3"
+ptr_hash = { git = "https://github.com/ragnargrootkoerkamp/ptrhash", default_features = false }
+
+[features]
+generator = ["anyhow", "rand", "rand_distr", "rayon"]
+
+[[bin]]
+name = "generate"
+required-features = ["generator"]
+
+[[bin]]
+name = "hayaku"
+path = "src/main.rs"
