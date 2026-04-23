@@ -11,7 +11,7 @@ incremental = true
 
 [dependencies]
 anyhow = { version = "1.0.81", optional = true }
-rand = { version = "0.8.5", optional = true }
+rand = { version = "0.8.6", optional = true }
 rand_distr = { version = "0.4.3", optional = true }
 rayon = { version = "1.9.0", optional = true }
 assert2 = "0.3.11"
